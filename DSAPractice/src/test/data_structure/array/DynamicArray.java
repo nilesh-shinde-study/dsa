@@ -1,6 +1,11 @@
 package test.data_structure.array;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.function.Predicate;
 
 public class DynamicArray {
 	
@@ -81,8 +86,43 @@ public class DynamicArray {
 		System.out.println("Array[1]: "+array[1]);
 		arrList.set(1, 339);
 		System.out.println("ArrayList[1]: "+arrList.get(1));
+
+		// Remove by object(not by index)
+		System.out.println("ArrayList: "+arrList);
+		arrList.remove((Object)11);
+		System.out.println("ArrayList: "+arrList);
 		
+		// conditional remove -- predicate example
+		arrList.removeIf(n -> n % 2 == 1); // Predicate as argument...
+		System.out.println("ArrayList: "+arrList);
+
+//		sorting
+		System.out.println("ArrayList2: "+arrayList2); //insertion order
+		arrayList2.sort(null);
+		System.out.println("ArrayList2: "+arrayList2);//ascending order
+		Collections.sort(arrayList2,Collections.reverseOrder());
+		System.out.println("ArrayList2: "+arrayList2);  //descending  order
 		
+		// to array
+		Object array22[] = arrayList2.toArray();
+		Integer arr22[] = new Integer[arrayList2.size()];
+		for(int i=0;i<array22.length;i++) 
+			if(array22[i] instanceof Integer)
+				arr22[i]=(Integer) array22[i];
+		System.out.print("arr22: ");
+		for(int i=0;i<array22.length;i++) 
+			System.out.print(arr22[i]+" ");
+		
+		// list iterator
+		/*ListIterator<Integer> listIterator = arrayList2.listIterator();
+		System.out.print("Forward iteration : ");
+		while(listIterator.hasNext())
+			System.out.println(listIterator.nextIndex() + " : "+listIterator.hasNext());
+		
+		System.out.print("Backward iteration : ");
+		while(listIterator.hasPrevious())
+			System.out.println(listIterator.previousIndex() + " : "+listIterator.hasPrevious());
+		*/
 		
 	}
 	

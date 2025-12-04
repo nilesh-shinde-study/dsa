@@ -1,11 +1,10 @@
-package test.linkedlist;
+package test.data_structure.linkedlist;
 
 public class LinkedlistTest {
 	
 	private static Node node;
 	
 	public static void main(String[] args) {
-//		Node node = new Node(1);
 		LinkedlistTest linkedList = new LinkedlistTest();
 		
 		linkedList.addNode(4);

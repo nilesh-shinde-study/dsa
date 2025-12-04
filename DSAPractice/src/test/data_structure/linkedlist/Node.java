@@ -1,4 +1,4 @@
-package test.linkedlist;
+package test.data_structure.linkedlist;
 
 public class Node {
 	
